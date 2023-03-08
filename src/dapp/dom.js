@@ -21,6 +21,7 @@ export default class DOM {
     ];
     
     static elid(id) { 
+      console.log(id)
       return document.getElementById(id);
     }
   

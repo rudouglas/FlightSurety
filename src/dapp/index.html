@@ -1,33 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>FlightSurety</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">FlightSurety</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
 
     <main class="container">
-
-        <div id="display-wrapper" class="top-20">
+        <h2>Contract Section</h2>
+        <div class="top-20">
+            <label class="form">Data contract status: </label>
+            <input type="text" id="contract-operational-status" readonly />
+            <btn class="btn btn-primary" id="contract-register-app-contract">Authorize App Contract</btn>&nbsp
         </div>
-        <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+        <div class="top-20">
+            <label class="form">Registration fee (ETH)</label><input type="text" id="contract-registration-fee"
+                maxlength="6" size="4" value="10" />
+            <btn class="btn btn-primary" id="contract-register-oracles">Register starting oracles</btn>
+        </div>
+
+        <div class="top-20"><br /><br /></div>
+        <h2>Airlines Section</h2>
+        <div class="top-20">
+            <h4>Register Airline</h4>
+        </div>
+        <div class="top-20">
+            <label class="form">Airline</label><select id="airlines-airline-dropdown"></select>&nbsp;&nbsp;
+            <btn class="btn btn-primary" id="airlines-register-airline">Register predefined airline</btn>
+        </div>
+        <div class="top-20">
+            <label class="form">Address</label> <input type="text" id="register-airline-address">
+            <label class="form">Name</label> <input type="text" id="register-airline-name">
+            <btn class="btn btn-primary" id="airlines-register-new-airline">Register new airline</btn>
+        </div>
+        <div class="top-20">
+            <h4>Fund Airline</h4>
+        </div>
+        <div class="top-20">
+            <label class="form">Amount (ETH)</label><input type="text" id="airlines-fund-amount" maxlength="2" size="4"
+                value="10" />&nbsp;&nbsp;
+            <btn class="btn btn-primary" id="fund-button">Fund Airline</btn>
+        </div>
+        <div class="top-20">
+            <br /><br />
+            <h2>Flights Section</h2>
+            <h4>Flight Status</h4>
+        </div>
+        <div class="top-20">
+            <label class="form">Flight</label>
+            <select id="flights-flights-dropdown"></select>&nbsp;&nbsp;
+            <btn class="btn btn-primary" id="flights-register-flight">Register flight</btn>
+            <btn class="btn btn-primary" id="flights-request-oracles">Check flight status & insurance</btn>
+        </div>
+
+        <div class="top-20">
+            <br /><br />
+            <h2>Passenger Section</h2>
+            <h4>Insure flight</h4>
+        </div>
+        <div class="top-20">
+            <label class="form">Flight</label>
+            <select id="passengers-flights-dropdown"></select>&nbsp;&nbsp; <label class="form">Amount
+                (ETH)</label><input type="text" id="passengers-insurance-amount" maxlength="4" size="4"
+                value="1" />&nbsp;&nbsp;
+            <btn class="btn btn-primary" id="passengers-insurance-button">Insure Flight</btn>
+        </div>
+        <div class="top-20">
+            <h4>Get Withdrawable Amount</h4>
+            <label class="form">Amount (ETH)</label><input type="text" id="passengers-payout-amount" maxlength="4"
+                size="4" value="" readonly />&nbsp;&nbsp;
+            <btn class="btn btn-primary" id="passengers-get-payout-amount">Update Withdrawable Amount</btn>
+        </div>
+        <div class="top-20">
+            <h4>Withdraw Insurance payout</h4>
+            <btn class="btn btn-primary" id="passengers-withdraw-payout">Withdraw Insurance Payout</btn>
         </div>
     </main>
-
 </body>
 
 </html>
